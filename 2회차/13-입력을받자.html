@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>입력을 받자</title>
+    </head>
+    <body>
+        <h1>
+            <p style="color:rgb(29, 29, 107);">로그인 해주세요</p>
+        </h1>
+        <label style="color:blue;">
+            아이디
+            <input type="text" placeholder="아이디">
+        </label>
+
+        <br>
+
+        <label style="color:brown;">
+            password
+            <input type="password" placeholder="password"> <!--***으로 변환-->
+        <label>
+
+        <br>
+
+        <label for="pw">비밀번호</label>
+        <input type="password" id="pw" placeholder="비밀번호">
+
+        <hr>
+
+        <label style="color:blueviolet;">파렛트</label>
+        <br>
+        <input type="color">
+        <br>
+        <input type="number"> <!--스피너 삽입-->
+        <br>
+        <h3 style="color:rgb(22, 22, 65);">배경색을 조정하세요!</h3>
+
+        <input type="range" id="colorRange" min="0" max="100" value="0">
+        <script>
+            // input[type="range"] 요소를 선택
+            const colorRange = document.getElementById('colorRange');
+        
+            // 이벤트 리스너 추가 (값이 변경될 때마다 실행)
+            colorRange.addEventListener(
+                'input', function() 
+                {
+              // input의 값을 가져와서 0~100 범위에서 0이 검은색, 100이 흰색이 되도록 계산
+                const value = colorRange.value;
+              // 값을 기반으로 색상 계산 (0이 검은색, 100이 흰색)
+                const colorValue = value / 100;  // 0에서 1 사이 값
+                const bgColor = `rgb(${255 * colorValue}, ${255 * colorValue}, ${255 * colorValue})`;
+
+              // body의 배경색을 업데이트
+            document.body.style.backgroundColor = bgColor;
+            });
+        </script>
+        <br>
+
+        <h3 style="color:rgb(22, 22, 65);">불을 켜봐요!</h3>
+        <style>
+            /* 사진을 기본적으로 숨김 */
+            #image {
+            display: none;
+            width: 300px;
+            height: auto;
+            }
+        
+            /* 체크박스가 체크되었을 때 이미지 보이기 */
+            input[type="checkbox"]:checked + label + #image {
+            display: block;
+            }
+        
+            label {
+              cursor: pointer; /* 레이블을 클릭할 수 있도록 스타일 추가 */
+            }
+        </style>
+        
+        <input type="checkbox" id="showImage">
+        <label for="showImage">이미지 보이기</label>
+
+        <!-- 보이거나 숨겨질 이미지 -->
+        <img id="image" 
+        src="images2/전구사진.jpg" 
+        alt="전구사진"
+        width="300" height="200"
+        >
+
+    </body>
+</html>

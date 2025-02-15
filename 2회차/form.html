@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>설문조사 양식</title>
+
+    <style>
+
+        mark {background-color: #dee0e0;color: white;}
+
+        label {margin-right: 10px;}
+        input[type="text"] {padding: 5px;}
+
+        fieldset {background-color: #edf2f7; border: 2px solid #202022; padding: 20px;}
+        legend {color: #202024; font-size: 1.2em;}
+
+        th, td {padding: 10px; text-align: center;}
+        input[type="radio"] {margin: 3 auto;}
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+    <h3 style="color:rgb(22, 22, 65);">배경색을 조정하세요!</h3>
+    <input type="range" id="colorRange" min="0" max="100" value="0">
+    <script>
+        // input[type="range"] 요소를 선택
+        const colorRange = document.getElementById('colorRange');
+    
+        // 이벤트 리스너 추가 (값이 변경될 때마다 실행)
+        colorRange.addEventListener(
+            'input', function() 
+            {
+          // input의 값을 가져와서 0~100 범위에서 0이 검은색, 100이 흰색이 되도록 계산
+            const value = colorRange.value;
+          // 값을 기반으로 색상 계산 (0이 검은색, 100이 흰색)
+            const colorValue = value / 100;  // 0에서 1 사이 값
+            const bgColor = `rgb(${255 * colorValue}, ${255 * colorValue}, ${255 * colorValue})`;
+          // body의 배경색을 업데이트
+        document.body.style.backgroundColor = bgColor;
+        });
+    </script>
+
+    <h1><mark style="color:rgb(67, 84, 100);">🚀설문조사 양식🚀</mark></h1>
+    <p style="color:rgb(206, 25, 25);"><strong>🌟모든 항목에 빠짐없이 체크해주십시오.</strong></p>
+    </header>
+    <hr>
+
+    <main>
+        <form> 범례  
+            <!--
+            main 부분에 넣은 form은 추후 서버에 실제 데이터를 보내기 위한 장치이다.
+            원래 대로라면 <form action="" method="">이런 속성이 포함되어야 함.
+            -->
+            <fieldset>
+                <legend><strong>개인정보</strong></legend>
+                <label for="name">😎이름</label>
+                <input type="text" name="name" id="name" placeholder="본명을 입력하세요">
+                <br>
+                <label for="email">🌍이메일</label>
+                <input type="email" name="email" id="email" placeholder="메일 주소를 쓰세요">
+            </fieldset>
+
+            <fieldset>
+                <legend><strong>설문</strong></legend>
+                
+                <p>1. 연령대가 어떻게 되십니까?</p>
+                <input type="radio" id="teen" name="age"> <label for="teen">10대</label>
+                <input type="radio" id="twenty" name="age"> <label for="twenty">20대</label>
+                <input type="radio" id="thirty" name="age"> <label for="thirty">30대</label>
+                <input type="radio" id="fourty" name="age"> <label for="fourty">40대</label>
+                <input type="radio" id="fifty" name="age"> <label for="fifty">50대</label>
+                <input type="radio" id="other" name="age"> <label for="other">그외</label>
+                <!--radio type은 name을 맞추게 되면 하나의 질문에 같이 묶이게 되기 때문에 하나의 답만 고를수 있게 된다.-->
+
+                <br>
+                <br>
+                <p>2. 학원 선택 시 그 기준은 어떻게 되시나요?</p>
+                <input type="checkbox" id="position" name="academy"> <label for="position">위치</label>
+                <input type="checkbox" id="price" name="academy"> <label for="price">학원비</label>
+                <input type="checkbox" id="teacher" name="academy"> <label for="teacher">강사</label>
+                <input type="checkbox" id="infra" name="academy"> <label for="infra">시설</label>
+                <input type="checkbox" id="other" name="academy"> <label for="other">그외</label>
+                <!--
+                checkbox type은 중복 선택이 가능하고 같은 것을 한번 더 클릭 시 표시가 사라짐.
+                중복 선택이어도 가능하면 form을 만들 때는 name이라는 속성을 모든 입력 요소에 추가해주는게 좋음.
+                -->
+
+                <br>
+                <br>
+                <p>3.💡전반적인 서비스 만족도는 어떻게 생각하시나요?</p>
+                <table border="3" style="border-color:rgb(23, 23, 119); border-style:groove">
+                    <thead>
+                        <tr>
+                            <th> </th>
+                            <th>매우 만족함</th>
+                            <th>만족함</th>
+                            <th>중립</th>
+                            <th>불만족</th>
+                            <th>매우 불만족</th>
+                        </tr>
+                    </thead>
+
+                    <tfoot>
+                        <tr>
+                            <th>내용</th>
+                            <td><input type="radio" id="Very-Satisfied" name="Courtesy"> <label for="Very-Satisfied"></label></td>
+                            <td><input type="radio" id="Satisfied" name="Courtesy"> <label for="Satisfied"></label></td>
+                            <td><input type="radio" id="Neutral" name="Courtesy"> <label for="Neutral"></label></td>
+                            <td><input type="radio" id="Dissatisfied" name="Courtesy"> <label for="Dissatisfied"></label></td>
+                            <td><input type="radio" id="Very_Dissatisfied" name="Courtesy"> <label for="Very_Dissatisfied"></label></td>
+                        </tr>
+                    </tfoot>
+
+                    <tfoot>
+                        <tr>
+                            <th>친절도</th>
+                            <td><input type="radio" id="Very-Satisfied" name="Content"> <label for="Very-Satisfied"></label></td>
+                            <td><input type="radio" id="Satisfied" name="Content"> <label for="Satisfied"></label></td>
+                            <td><input type="radio" id="Neutral" name="Content"> <label for="Neutral"></label></td>
+                            <td><input type="radio" id="Dissatisfied" name="Content"> <label for="Dissatisfied"></label></td>
+                            <td><input type="radio" id="Very_Dissatisfied" name="Content"> <label for="Very_Dissatisfied"></label></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend><strong>기타 의견</strong></legend>
+                <textarea rows="10" cols="55" name="comment"></textarea>
+            </fieldset>
+
+            <input type="submit">
+
+        </form>
+    </main>
+    <hr>
+
+    <footer>
+    <p>입력하느라 수고하셨습니다.😊</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!--
+<meta> 태그는 HTML 문서에 대한 메타데이터를 정의한다.
+메타데이터란 데이터에 대한 데이터, 즉 '정보'를 의미한다.
+meta 태그는 항상 head태그의 안에 들어가며, 일반적으로 문자 세트, 페이지 설명, 키워드, 
+문서의 작성자 및 뷰포트 설정을 지정하는 데 사용된다.
+메타데이터가 없이도 페이지가 만들어지지만
+meta 태그를 사용하는 이유?
+웹페이지에 대한 정보를 제공 하므로 검색엔진이 페이지를 검색할 때
+참고할 수 있고, 검색 결과에도 반영할 수 있다.
+실제 개발 분야로 나아가게 되면 HTML문서를 만드는 것 뿐만 아니라 서비스도 해야하므로 
+서비스를 할 때 실제로 검색이 되는 실제로 사용자가 사용할 수 있는 페이지를 만들어야 하고
+그럴 때 meta태그가 검색 엔진에게 도움이 된다.
+
+meta 태그가 제공하는 메타데이터의 유형&속성은?
+* charset : 문자 세트
+    문자 인코딩에 대한 요약 정보를 기입하는 속성.
+    문자 인코딩이란 한글을 표시하기 위해 문자 세티를 지정하는 작업으로, 
+    영문과 한글을 모두 사용하기 위해 utf-8 방식을 사용하는 것이 좋다.
+
+    <meta charset="utf-8">
+    =>인코딩을 명확하게 기입해두지 않으면 웹브라우저 설정 상황에 따라 자동으로 인코딩을 추정해서 처리한다.
+    즉, 문자가 깨질 가능성이 생긴다.
+
+* http-equiv : 콘텐츠 속성 정보에 대한 http 헤더
+    HTTP란 인터넷에서 데이터를 주고 받을 수 있는 프로토콜이다.
+    http-equiv가 http 관련 정보를 지정하면, content가 그에 대한 정보(값)를 지정한다.
+    
+    IE 브라우저 최신 버전의 엔진을 사용한다는 의미
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+     http-equiv가 x-ua-compatible로 되어있고 compatible은 호환성이라는 뜻을 가지고 있다.
+     이 compatible이라는 것을 http-equiv에다가 지정을 하고 나면 이제 content속성에다가 어떤 값을 지정하냐에 따라서
+     호환성 맞춤 설정이 결정되게 된다. 
+     여기서 IE=edge 라는 뜻은 마이크로소프트사 계열의 웹브라우저를 사용할 때 edge라는 엔진에 맞춰 개발을 했다 라는 의미.
+     결국은 마이크로소프트 계열의 웹브라우저 호환성을 맞추기 위해 사용하는 것이 x-ua-compatible이라는 속성이다 라는 뜻.
+
+    페이지를 10초마다 새로고침 한다는 의미
+    <meta http-equiv="refresh" content="10">
+     http-equiv를 refresh로 한 경우 refresh는 새로고침 이라는 뜻을 가지고 있으므로 새로고침을 http-equiv에 지정을 한다음에 
+     content 값을 10으로 하게 되면 페이지를 10초마다 새로고침한다는 의미가 된다.
+
+* name : 문서 정보
+* content : 메타데이터 내용
+    <meta>에서도 name이 쓰인다.
+    name 속성을 이름으로, content 속성을 값으로 하여 "문서 정보를 이름+값 쌍의 형태"로 제공할 때 사용할 수 있다.
+    
+    <meta name="author" content="페이지 작성자">
+    <meta name="description" content="페이지에 대한 요약 정보글">
+    <meta name="keywords" content="공부, 코딩, IT, 학습">
+    위와 같이 문서 정보를 입력하는 것은 검색 최적화에 도움이 되는 작업이다.
+     결국에는 이것도 품질이 좋은 사용자에게 잘 전달되는 페이지를 만들기 위한 장치.
+     name은 form에서 입력요소간의 구별을 위해서 사용하는 식별자.
+-->
+
+<!DOCTYPE htle>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta
+        http-equiv="x-ua-compatible"
+        content="IE=edge"
+        >
+        <meta name="author" content="장태문"> <!--author 저자-->
+        <meta name="description" content="연습용 페이지"> <!--description 서술적 묘사-->
+        <meta name="keywords" content="공부, HTML, 실습"> <!--keywords 페이지를 나타내는 키워드드-->
+        <title>문서 정보 관리하기</title>
+    </head>
+    <body>
+
+    </body>
+</html>
+<!--실제로 화면상(live F12)에는 아무런 변화가 없지만 단지 정보가 많은 페이지가 만들어 졌다 
+뿐이고 정보가 많고 적적할 수록 검색 엔진의 검색이 잘된다-->
+
+<!--VSCodestudio에는 자동완성 기능이 있는데 파일을 만들어 놓고 
+1 !
+느낌표 하나만 입력한 후 엔터를 치면 기본구조가 완성됨
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
