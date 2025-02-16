@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>선택자 기본편</title>
+    <style>
+        *{
+            color: blue;
+        }
+        li{
+            color: red;
+        }
+        /*
+        선택자 우선순위: 쓰여진 순서랑 관계없이 적용되는 순위
+        1. 아이디 선택자
+        2. 클래스 선택자
+        3. 태그 선택자
+        ex) #belly를 li.hiphop위에 둔다고 했을 때 li가 나중에 써졌으니까 벨리가 파란색이 된다고 생각할 수 있다.
+        그러나 ID선택자가 태그 선택자보다 우선순위가 높기 때문에 저장을 해도 색이 달라지지 않음
+        ex) li.hiphop 클래스를 위에 두고 아래에 li 다른 색을 적용시켜도 태그선택자가 나중에 쓰여졌어도 클래스 선택자가
+        우선순위가 높기 때문이다.
+        기본적으로는 나중에 쓰여지는게 적용되는게 맞지만 선택자 우선순위를 따르는 경우가 있기 떄문에 이를 염두해 두어야 함.
+        */
+        #poppin{
+            color: green;
+        }
+        li.hiphop{
+            color: purple;
+        }
+        li#belly{
+            color: orange;
+        }
+
+        h2, p, li{
+            color: yellow;
+        }
+        /*복수를 한꺼번에 선택해서 색 변경경*/
+
+    </style>
+</head>
+<!--hiphop, belly만 표기하면 구분을 하지 못하기 때문에 
+    class를 구분하는 .을 앞에 입력 (보라색)
+    id를 구분하는 #을 앞에 입력 (오랜지색)
+    앞에 태그를 명시할 수 있음
+-->
+<body>
+    <h2>춤의 장르</h2>
+    <p>무척 다양한 장르가 존재합니다</p>
+    <ul>
+        <li class="hiphop">비보잉</li>
+        <li class="hiphop" id="poppin">팝핀</li>
+        <li class="hiphop">락킹</li>
+        <li id="belly">벨리</li>
+        <li id="jazz">재즈</li>
+    </ul>
+</body>
+</html> 

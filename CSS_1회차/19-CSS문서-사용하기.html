@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CSS 문서 사용하기</title>
+    <style>
+        p{ 
+            color:orange; 
+        }
+    </style>
+    <link href="19-CSS문서-사용하기.css" rel="stylesheet">
+</head>
+<body>
+
+    <!--
+        인라인 스타일은 우선적으로 적용된다. (body 파란색은 그대로 적용)
+        HTML과 CSS에서 Enter와 공백은 자유롭게 적용시켜도 된다.
+        인라인 스타일이 아닌 경우, 나중에 쓰여진 선언문이 적용된다. (head 안에 오렌지->퍼플)
+    -->
+    <p style="color: blue;">
+    
+        스타일 적용 실험: 색깔만 바꿔보자
+    
+    </p>
+    <p style="opacity: 0;">스타일 적용 실험: 색깔만 바꿔보자</p>
+    <p>스타일 적용 실험: 색깔만 바꿔보자</p>
+    <p>스타일 적용 실험: 색깔만 바꿔보자</p>
+
+</body>
+</html>

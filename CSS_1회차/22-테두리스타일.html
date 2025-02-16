@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>테두리 스타일</title>
+    <style>
+        .area{
+            /*
+            % : 내가 속한 영역을 기준으로 백분율 계산
+            => 내가 속한 영역에 관련 값이 있어야 적용 가능!
+            */
+            width: 200px;
+            height: 100px;
+        }
+
+        .red{
+            border-width: 7px;
+            border-style: double;
+            border-color: rgb(83, 13, 129);
+        }
+
+        .green{
+            /*단축속성은 공백으로 속성값을 서로 구분!*/
+            border: 3px solid rgb(38, 20, 197);
+
+            border-radius: 10px 20px 30px 40px;
+            /*border-radius의 px값이 커질수록 둥글어짐*/
+        }
+    </style>
+</head>
+<body>
+    <h2>마크툽 - 시작의 아이</h2>
+    <p class="red">존재하는 이유</p>
+    <p class="area green">그런 건 아무래도 좋으니</p>
+    <p>그리 즐겁지도 괴롭지도 않은</p>
+    <p>바람아 불어라</p>
+</body>
+</html> 
