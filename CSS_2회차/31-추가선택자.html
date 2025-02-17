@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>선택자 더 알아보기</title>
+    <style>
+        /*img[alt]{
+        border: 5px dashed red;
+        }*/
+        [width $= "0"]{
+            border: 5px dashed red;
+        }
+        /*
+        기호와 함께 사용하는 속성 선택자 (선택의 경우의 수를 늘려줌)
+        * : 값의 포함 여부
+        ^ : 값의 시작 여부
+        $ : 값의 끝 여부
+        */
+
+        /*하위요소 선택하기
+        body em{
+            color: blue;
+        }*/
+        /*자식요소 선택하기 - p태그 밑에 있는 em*/
+        p > em{
+            color: rgb(199, 96, 27);
+        }
+        /*형제요소 선택하기 - 인접해 있는 형제 요소를 선택
+        #sam + p{
+            color:aqua
+        }*/
+
+        #sam ~ p{
+            color:rgb(34, 77, 77)
+        }
+
+        /*
+        형제 선택자는 뒤이어 등장하는 형제들을 대상으로 한다.
+        */
+        #sam ~ img{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="images/나주향교대성전.jpg" width="120" alt="나주">
+    <img src="images/나주향교대성전.jpg" width="120">
+    <img src="images/나주향교대성전.jpg" width="120" id="sam">
+    <p>나주는 저의 현 거주지 입니다.</p>
+    <p>나주 빛가람 혁신도시에는 빛가람 전망대가 있습니다.</p>
+    <p>전망대 앞에는 <em>빛가람 호수</em>가 있습니다.</p>
+    <p>빛가람 호수 근처에는 호수공원이 넓게 형성되어 있습니다.</p>
+</body>
+</html> 
